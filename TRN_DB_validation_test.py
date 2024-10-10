@@ -38,7 +38,7 @@ def test_salary_range_employees(db_conn):
             WHERE salary < 1000 OR salary > 100000
         """)
         result = cursor.fetchone()
-        assert result[0] == 0, "All salaries should be between $1,000 and $100,000"
+        assert result[0] == 0, "All salaries should be between $1,500 and $100,000"
 
 
 def test_foreign_key_constraints_dependents(db_conn):
