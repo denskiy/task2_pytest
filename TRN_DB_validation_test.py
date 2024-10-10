@@ -75,7 +75,7 @@ def test_region_id_values_countries(db_conn):
             JOIN hr.Regions r ON c.region_id = r.region_id
         """)
         result = cursor.fetchone()
-        assert result[0] == result[1], "All Region IDs should exist in Regions table"                
+        assert result[0] == result[1], "All Region IDs should exist in Regions table"
 
 
 def test_country_id_uniqueness(db_conn):
