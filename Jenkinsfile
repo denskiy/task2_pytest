@@ -4,7 +4,7 @@ pipeline {
         VENV_PATH = 'venv'
         REPO_URL = 'https://github.com/denskiy/task2_pytest.git'
         DEVELOP_BRANCH = 'develop'
-        RELEASE_BRANCH = 'release'
+        RELEASE_BRANCH = 'release-candidate'
     }
     stages {
         stage('Checkout') {
