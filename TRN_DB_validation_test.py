@@ -1,21 +1,23 @@
 import pytest
-import pyodbc
+import pymssql
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
 
-SERVER = os.getenv('SERVER')
-DATABASE = os.getenv('DATABASE')
-UID = os.getenv('UID')
-PWD = os.getenv('PWD')
+# SERVER = os.getenv('SERVER')
+# DATABASE = os.getenv('DATABASE')
+# UID = os.getenv('UID')
+# PWD = os.getenv('PWD')
 
-connectionString = f"DRIVER={{ODBC Driver 17 for SQL Server}};\
-SERVER={SERVER};DATABASE={DATABASE};UID={UID};PWD={PWD}"
+SERVER = 'EPAMYERW01C7\\SQLEXPRESS'
+DATABASE = 'TRN'
+UID = 'LastUser'
+PWD = 'NewLastPassword17'
 
 @pytest.fixture(scope='module')
 def db_conn():
-    conn = pyodbc.connect(connectionString)
+    conn = pymssql.connect(server=SERVER, user=UID, password=PWD, database=DATABASE)
     yield conn
 
 

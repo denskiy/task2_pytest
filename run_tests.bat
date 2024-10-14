@@ -11,7 +11,7 @@ if %errorlevel% neq 0 (
 
 REM Change directory to your tests folder (if necessary)
 echo Changing to tests directory...
-cd C:\ProgramData\Jenkins\.jenkins\workspace\PytestPipeline
+cd %~2
 if %errorlevel% neq 0 (
     echo Failed to change directory.
     exit /b %errorlevel%
@@ -28,6 +28,7 @@ if %errorlevel% neq 0 (
 ) else (
     echo Pytest completed successfully.
 )
+
 
 REM Deactivate virtual environment
 echo Deactivating virtual environment...
