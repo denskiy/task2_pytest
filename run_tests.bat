@@ -17,6 +17,9 @@ if %errorlevel% neq 0 (
     exit /b %errorlevel%
 )
 
+echo Installing required Python packages...
+pip install -r requirements.txt
+
 echo Running pytest...
 pytest
 if %errorlevel% neq 0 (
